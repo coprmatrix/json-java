@@ -1,0 +1,15 @@
+<services>
+	<service name="obs_scm">
+		<param name="scm">git</param>
+		<param name="url">https://github.com/stleary/JSON-java.git</param>
+		<param name="revision">master</param>
+		<param name="versionformat">@PARENT_TAG@</param>
+		<param name="filename">json-java</param>
+	</service>
+        <service name="tar" mode="buildtime"/>
+	<service name="recompress" mode="buildtime">
+		<param name="file">*.tar</param>
+		<param name="compression">xz</param>
+	</service>
+	<service name="set_version"/>
+</services>
